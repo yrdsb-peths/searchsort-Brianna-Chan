@@ -6,8 +6,28 @@ public class BinarySearch extends Search {
      * search. Return -1 if target is not found in arr.
      */
     @Override
-    public int find(int[] arr, int target) {
-        return 0;
+    public int find(int[] arr, int target) 
+    {
+        assert Util.isSorted(arr);
+        int low = 0;
+        int high = arr.length - 1;
+        while(low <= high)
+        {
+            int mid = (low + high) / 2;
+            if(target < arr[mid])
+            {
+                high = mid - 1;
+            }
+            else if(target > arr[mid])
+            {
+                low = mid + 1;
+            }
+            else
+            {
+                return mid;
+            }
+        }
+        return -1;
     }
 
     /**
