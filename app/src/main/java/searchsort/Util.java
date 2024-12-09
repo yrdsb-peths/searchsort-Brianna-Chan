@@ -25,14 +25,25 @@ public class Util {
         Random random = (seed != null) ? new Random(seed) : new Random();
         // Note: This generates a random number between 0 and 5:
         // int randomNum = random.nextInt(6);
+        int length = arr.length;
 
+        for(int i = length - 1; i > 0; i--)
+        {
+            int index = random.nextInt(i+1);
+
+            exch(arr, i, index);
+        }
         return arr;
     }
 
     /**
      * Exchange the elements at indices i and j in the array arr.
      */
-    public static void exch(int[] arr, int i, int j) {
+    public static void exch(int[] arr, int i, int j) 
+    {
+        int x = arr[i];
+        arr[i] = arr[j];
+        arr[j] = x;
 
     }
 
@@ -41,17 +52,31 @@ public class Util {
      */
     public static int[] generateRandomArray(int n, Long seed) {
         // Create a new integer array of size n
+        int[] arr = new int[n];
+        Random random = new Random();
+        for(int i = 0; i < n; i++)
+        {
+            arr[i] = random.nextInt(n-1);
+        }
 
         // Shuffle the array using the Shuffle method with the given seed
+        shuffle(arr, seed);
 
         // Return the shuffled array
-        return new int[n];
+        return arr;
     }
 
     /**
      * Check if the array arr is sorted in ascending order.
      */
     public static boolean isSorted(int[] arr) {
+        for(int i = 0; i < arr.length - 2; i++)
+        {
+            if(arr[i] > arr[i+1])
+            {
+                return false;
+            }
+        }
         return true;
     }
 }
