@@ -5,9 +5,8 @@ public class InsertionSort {
      * Sort the array arr using insertion sort algorithm.
      */
     public static void sort(int[] arr) {
-        int length = arr.length;
 
-        for(int i = 1; i < length; i++)
+        for(int i = 1; i < arr.length - 1; i++)
         {
             for(int j = i; j > 0; j--)
             {
