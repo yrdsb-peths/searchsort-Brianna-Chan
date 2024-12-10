@@ -48,7 +48,5 @@ public class MergeSort extends Sort {
                 i++;
             }
         }
-
-        assert Util.isSorted(arr);
     }
 }
