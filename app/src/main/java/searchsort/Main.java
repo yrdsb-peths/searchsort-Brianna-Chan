@@ -18,5 +18,11 @@ public class Main {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
+
+        int[] input = { 1 };
+       // LinearSearch linearsearch = new LinearSearch();
+        System.out.println(LinearSearch.find(input,1));
+        
+
     }
 }

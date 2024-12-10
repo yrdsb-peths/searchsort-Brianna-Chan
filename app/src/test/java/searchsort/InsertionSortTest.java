@@ -9,7 +9,8 @@ public class InsertionSortTest {
     public void testSortArray() {
 
         // Test case 1: Unsorted array
-s        int[] expected = { 1, 2, 5, 5, 6, 9 };
+        int[] input = { 5, 2, 9, 1, 5, 6 };
+        int[] expected = { 1, 2, 5, 5, 6, 9 };
 
         // Call the sort method
         InsertionSort.sort(input);
